@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script runs the Python file stored in the PYFILE environment variable
+python3 "$PYFILE"
