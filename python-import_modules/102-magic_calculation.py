@@ -1,9 +1,14 @@
 #!/usr/bin/python3
-def add(a, b):
-    """Addition function"""
-    return (a + b)
+"""Magic calculation module"""
+from magic_calculation_102 import add, sub
 
 
-def sub(a, b):
-    """Subtraction function"""
-    return (a - b)
+def magic_calculation(a, b):
+    """Does a magic calculation"""
+    if a < b:
+        c = add(a, b)
+        for i in range(4, 6):
+            c = add(c, i)
+        return c
+    else:
+        return sub(a, b)
