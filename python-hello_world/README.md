@@ -1,1 +1,1 @@
-# ALU Higher Level Programming
+Python hello world exercises
