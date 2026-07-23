@@ -1,5 +1,6 @@
 >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 >>> bg = BaseGeometry()
+
 >>> isinstance(bg, BaseGeometry)
 True
 
@@ -8,6 +9,18 @@ True
 ... except Exception as e:
 ...     print(type(e).__name__, e)
 Exception area() is not implemented
+
+>>> try:
+...     bg.integer_validator()
+... except Exception as e:
+...     print(type(e).__name__)
+TypeError
+
+>>> try:
+...     bg.integer_validator("age")
+... except Exception as e:
+...     print(type(e).__name__)
+TypeError
 
 >>> bg.integer_validator("age", 1)
 
