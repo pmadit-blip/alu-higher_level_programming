@@ -1,0 +1,60 @@
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+>>> bg = BaseGeometry()
+>>> isinstance(bg, BaseGeometry)
+True
+
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     print(type(e).__name__, e)
+Exception area() is not implemented
+
+>>> bg.integer_validator("age", 1)
+
+>>> try:
+...     bg.integer_validator("age", 0)
+... except Exception as e:
+...     print(type(e).__name__, e)
+ValueError age must be greater than 0
+
+>>> try:
+...     bg.integer_validator("age", -4)
+... except Exception as e:
+...     print(type(e).__name__, e)
+ValueError age must be greater than 0
+
+>>> try:
+...     bg.integer_validator("age", "4")
+... except Exception as e:
+...     print(type(e).__name__, e)
+TypeError age must be an integer
+
+>>> try:
+...     bg.integer_validator("age", (4,))
+... except Exception as e:
+...     print(type(e).__name__, e)
+TypeError age must be an integer
+
+>>> try:
+...     bg.integer_validator("age", [3])
+... except Exception as e:
+...     print(type(e).__name__, e)
+TypeError age must be an integer
+
+>>> try:
+...     bg.integer_validator("age", True)
+... except Exception as e:
+...     print(type(e).__name__, e)
+TypeError age must be an integer
+
+>>> try:
+...     bg.integer_validator("age", {3, 4})
+... except Exception as e:
+...     print(type(e).__name__, e)
+TypeError age must be an integer
+
+>>> try:
+...     bg.integer_validator("age", None)
+... except Exception as e:
+...     print(type(e).__name__, e)
+TypeError age must be an integer
