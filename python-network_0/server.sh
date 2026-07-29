@@ -1,29 +1,33 @@
-msg - [Got]
-<!doctype html>
-<html lang=en>
-<title>405 Method Not Allowed</title>
-<h1>Method Not Allowed</h1>
-<p>The method is not allowed for the requested URL.</p>
+#!/usr/bin/python3
+""" Doc
+"""
+from flask import Flask, Response, request, redirect, url_for
+app = Flask(__name__)
 
-(153 chars long)
-[stderr]: 
-(0 chars long)
-[Expected]
-You find me!
-(12 chars long)
-[stderr]: [Anything]
-(0 chars long)msg - [Got]
-<!doctype html>
-<html lang=en>
-<title>405 Method Not Allowed</title>
-<h1>Method Not Allowed</h1>
-<p>The method is not allowed for the requested URL.</p>
+@app.route("/catch_me", methods=['PUT'], strict_slashes=False)
+def catch_me_1():
+	if request.method == 'PUT':
+		return redirect(url_for('catch_me_2'), code=307)
+	else:
+		res = Response("No")
+		res.headers["Allow"] = "PUT"
+		return res
 
-(153 chars long)
-[stderr]: 
-(0 chars long)
-[Expected]
-You find me!
-(12 chars long)
-[stderr]: [Anything]
-(0 chars long)
+@app.route("/catch_me_2", methods=['PUT'], strict_slashes=False)
+def catch_me_2():
+	if request.form.get("user_id") == "98":
+		return redirect(url_for('catch_me_3'), code=307)
+	else:
+		return "You are not user_id = 98", 401
+
+@app.route("/catch_me_3", methods=['PUT'], strict_slashes=False)
+def catch_me_3():
+	if request.headers.get('Origin') == "HolbertonSchool":
+		return "You find me!"
+	else:
+		return "You are not coming from HolbertonSchool", 403
+
+
+if __name__ == "__main__":
+	app.run(host="0.0.0.0", port=5000)
+    
