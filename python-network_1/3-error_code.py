@@ -1,12 +1,9 @@
 #!/usr/bin/python3
-"""
-Module that sends a request to a URL and displays the body
-of the response. Handles urllib.error.HTTPError exceptions
-and prints the HTTP status code.
-"""
+"""Module that fetches a URL and handles HTTP error codes."""
 import urllib.request
 import urllib.error
 import sys
+
 
 url = sys.argv[1]
 try:
