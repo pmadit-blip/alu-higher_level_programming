@@ -1,0 +1,39 @@
+===========================
+Tests for lazy_matrix_mul
+===========================
+
+Import the function:
+    >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Test basic multiplication:
+    >>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+    [[ 7 10]
+     [15 22]]
+
+Test non-square matrices:
+    >>> print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+    [[13 16]]
+
+Test with floats:
+    >>> print(lazy_matrix_mul([[1.0, 2.0]], [[3.0, 4.0], [5.0, 6.0]]))
+    [[13. 16.]]
+
+Test wrong type m_a:
+    >>> lazy_matrix_mul("not a list", [[1, 2]])
+    Traceback (most recent call last):
+    ValueError: Scalar operands are not allowed, use '*' instead
+
+Test wrong type m_b:
+    >>> lazy_matrix_mul([[1, 2]], "not a list")
+    Traceback (most recent call last):
+    ValueError: Scalar operands are not allowed, use '*' instead
+
+Test empty list m_a:
+    >>> lazy_matrix_mul([], [[1, 2]])
+    Traceback (most recent call last):
+    ValueError: matmul: Input operand 0 does not have enough dimensions...
+
+Test incompatible dimensions:
+    >>> lazy_matrix_mul([[1, 2]], [[1, 2]])
+    Traceback (most recent call last):
+    ValueError: matmul: Input operand 1 has a mismatch in its core dimension...
