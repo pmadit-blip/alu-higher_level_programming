@@ -74,8 +74,8 @@ class Base:
             writer = csv.writer(f)
             if cls.__name__ == "Rectangle":
                 for obj in list_objs:
-                    writer.writerow([obj.id, obj.width, obj.height,
-                                      obj.x, obj.y])
+                    writer.writerow(
+                        [obj.id, obj.width, obj.height, obj.x, obj.y])
             else:
                 for obj in list_objs:
                     writer.writerow([obj.id, obj.size, obj.x, obj.y])
@@ -172,8 +172,8 @@ class Base:
             writer = csv.writer(f)
             if cls.__name__ == "Rectangle":
                 for obj in list_objs:
-                    writer.writerow([obj.id, obj.width, obj.height,
-                                      obj.x, obj.y])
+                    writer.writerow(
+                        [obj.id, obj.width, obj.height, obj.x, obj.y])
             else:
                 for obj in list_objs:
                     writer.writerow([obj.id, obj.size, obj.x, obj.y])
