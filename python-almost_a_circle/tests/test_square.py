@@ -96,7 +96,7 @@ class TestSquare(unittest.TestCase):
         s = Square.create(**{'id': 89, 'size': 1, 'x': 2, 'y': 3})
         self.assertEqual(s.y, 3)
 
-    def test_save_to_file_none(self):
+    def test_save_to_file_None(self):
         Square.save_to_file(None)
         with open("Square.json", "r") as f:
             self.assertEqual(f.read(), "[]")
