@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-"""
-Script that takes in a URL, sends a request to the URL
-and displays the body of the response decoded in utf-8.
-Manages urllib.error.HTTPError exceptions and prints the HTTP status code.
-"""
+"""Script that fetches a URL and handles HTTP errors."""
 import urllib.request
 import urllib.error
 import sys
+
+
 try:
     with urllib.request.urlopen(sys.argv[1]) as r:
         print(r.read().decode("utf-8"))
