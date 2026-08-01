@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script that fetches a URL and handles HTTP errors."""
+"""Script that fetches a URL and handles HTTP errors"""
 import urllib.request
 import urllib.error
 import sys
