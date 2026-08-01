@@ -30,7 +30,7 @@ class TestSquare(unittest.TestCase):
 
     def test_str(self):
         s = Square(4, 2, 1, 12)
-        self.assertEqual(str(s), "[Square] [12] 2/1 - 4/4")
+        self.assertEqual(str(s), "[Square] (12) 2/1 - 4")
 
     def test_update_args(self):
         s = Square(5, 5, 5, 1)
