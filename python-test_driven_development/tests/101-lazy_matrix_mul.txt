@@ -24,7 +24,7 @@ ValueError: Scalar operands are not allowed, use '*' instead
 >>> lazy_matrix_mul([[1, "a"]], [[1, 2], [3, 4]])
 Traceback (most recent call last):
     ...
-ValueError: could not broadcast input array from shape (2) into shape (1)
+TypeError: invalid data type for einsum
 
 >>> lazy_matrix_mul([], [[1, 2]])
 Traceback (most recent call last):

@@ -17,4 +17,3 @@ def lazy_matrix_mul(m_a, m_b):
     array([[13, 16]])
     """
     return np.matmul(m_a, m_b)
-
