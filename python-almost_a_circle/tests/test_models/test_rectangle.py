@@ -133,12 +133,7 @@ class TestRectangle(unittest.TestCase):
         with open("Rectangle.json", "r") as f:
             self.assertEqual(f.read(), "[]")
 
-    def test_save_to_file_list_empty(self):
-        Rectangle.save_to_file([])
-        with open("Rectangle.json", "r") as f:
-            self.assertEqual(f.read(), "[]")
-
-    def test_save_to_file_empty_list(self):
+    def test_save_to_file_empty(self):
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as f:
             self.assertEqual(f.read(), "[]")
@@ -157,13 +152,6 @@ class TestRectangle(unittest.TestCase):
         Rectangle.save_to_file([Rectangle(1, 2)])
         rects = Rectangle.load_from_file()
         self.assertIsInstance(rects[0], Rectangle)
-
-    def test_save_to_file_empty_rectangle(self):
-        Rectangle.save_to_file([])
-        self.assertTrue(os.path.exists("Rectangle.json"))
-        with open("Rectangle.json", "r") as f:
-            self.assertEqual(f.read(), "[]")
-
 
 
 if __name__ == '__main__':
