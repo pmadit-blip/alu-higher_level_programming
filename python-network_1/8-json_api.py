@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script that sends a POST request and displays JSON result"""
+"""8-json_api"""
 import requests
 import sys
 
