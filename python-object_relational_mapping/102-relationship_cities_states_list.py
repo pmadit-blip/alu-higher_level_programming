@@ -1,18 +1,20 @@
 #!/usr/bin/python3
-"""Lists all City objects and their corresponding State"""
+"""Lists all City objects and their corresponding State."""
 
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
+from relationship_state import Base, State
 from relationship_city import City
-from relationship_state import Base
 
 
 if __name__ == "__main__":
     engine = create_engine(
         "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
-            sys.argv[1], sys.argv[2], sys.argv[3]
+            sys.argv[1],
+            sys.argv[2],
+            sys.argv[3]
         ),
         pool_pre_ping=True
     )
@@ -26,3 +28,5 @@ if __name__ == "__main__":
             city.name,
             city.state.name
         ))
+
+    session.close()
