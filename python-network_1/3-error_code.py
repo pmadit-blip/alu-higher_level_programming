@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script that sends a request to a URL and displays the response body."""
+"""Sends a request to a URL and displays the body of the response."""
 import urllib.request
 import urllib.error
 import sys
