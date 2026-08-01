@@ -126,7 +126,12 @@ class TestSquare(unittest.TestCase):
         squares = Square.load_from_file()
         self.assertIsInstance(squares[0], Square)
 
-
-if __name__ == '__main__':
+    def test_save_to_file_empty_square(self):
+        Square.save_to_file([])
+        self.assertTrue(os.path.exists("Square.json"))
+        with open("Square.json", "r") as f:
+            self.assertEqual(f.read(), "[]")
+if 
+'__main__':
     unittest.main()
 

@@ -158,6 +158,13 @@ class TestRectangle(unittest.TestCase):
         rects = Rectangle.load_from_file()
         self.assertIsInstance(rects[0], Rectangle)
 
+    def test_save_to_file_empty_rectangle(self):
+        Rectangle.save_to_file([])
+        self.assertTrue(os.path.exists("Rectangle.json"))
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual(f.read(), "[]")
+
+
 
 if __name__ == '__main__':
     unittest.main()
