@@ -42,4 +42,3 @@ def matrix_mul(m_a, m_b):
                  for k in range(len(m_b)))
              for j in range(len(m_b[0]))]
             for i in range(len(m_a))]
-
