@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""Script that fetches a URL and displays the X-Request-Id header value"""
+"""Module that sends a request to a URL and displays X-Request-Id header."""
 import requests
 import sys
 
 
 r = requests.get(sys.argv[1])
-print(r.headers.get("X-Request-Id"))
+print(r.headers.get('X-Request-Id'))
