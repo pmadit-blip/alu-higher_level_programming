@@ -3,7 +3,6 @@
 import requests
 import sys
 
-
 repo = sys.argv[1]
 owner = sys.argv[2]
 url = "https://api.github.com/repos/{}/{}/commits".format(
