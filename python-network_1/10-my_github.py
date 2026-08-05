@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""Script that uses GitHub API to display user id using Basic Authentication"""
+"""Script that uses GitHub API to display user id."""
 import requests
 import sys
 
-
-r = requests.get("https://api.github.com/user",
-                 auth=(sys.argv[1], sys.argv[2]))
-print(r.json().get("id"))
+url = "https://api.github.com/user"
+response = requests.get(url, auth=(sys.argv[1], sys.argv[2]))
+print(response.json().get("id"))
