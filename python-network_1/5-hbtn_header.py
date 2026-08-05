@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Module that sends a request to a URL and displays X-Request-Id header."""
+"""
+Module that sends a request to a URL
+and displays X-Request-Id header value.
+"""
 import requests
 import sys
 
