@@ -1,3 +1,2 @@
 #!/bin/bash
-# Sends a request that makes the server respond with "You find me!"
-curl -sL -X PUT -d "user_id=98" 0.0.0.0:5000/catch_me
+curl -sL -X PUT -H "X-School-User-Id: 98" 0.0.0.0:5000/catch_me
