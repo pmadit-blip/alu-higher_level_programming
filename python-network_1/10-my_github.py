@@ -1,13 +1,15 @@
 #!/usr/bin/python3
-"""Script that fetches https://intranet.hbtn.io/status"""
-import urllib.request
+"""Script that uses GitHub API to display user id."""
+import requests
+import sys
 
+url = "https://api.github.com/user"
+response = requests.get(url, auth=(sys.argv[1], sys.argv[2]))
+print(response.json().get("id"))#!/usr/bin/python3
+"""Script that uses GitHub API to display user id."""
+import requests
+import sys
 
-with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
-    body = response.read()
-    print("Body response:")
-    print("\t- type: {}".format(type(body)))
-    print("\t- content: {}".format(body))
-    print("\t- utf8 content: {}".format(body.decode('utf-8')))
-~                                  
-~                      
+url = "https://api.github.com/user"
+response = requests.get(url, auth=(sys.argv[1], sys.argv[2]))
+print(response.json().get("id"))
