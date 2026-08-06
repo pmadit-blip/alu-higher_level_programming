@@ -4,7 +4,6 @@ import urllib.request
 import urllib.error
 import sys
 
-
 try:
     with urllib.request.urlopen(sys.argv[1]) as r:
         print(r.read().decode('utf-8'))
