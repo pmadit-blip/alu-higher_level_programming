@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script that uses GitHub API to display user id."""
+"""Script that uses GitHub API to display user id"""
 import requests
 import sys
 
