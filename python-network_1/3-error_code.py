@@ -7,6 +7,6 @@ import sys
 
 try:
     with urllib.request.urlopen(sys.argv[1]) as r:
-        print(r.read().decode('utf-8'))
+        print(r.read().decode('utf-8'), end="")
 except urllib.error.HTTPError as e:
     print("Error code: {}".format(e.code))
