@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-"""Script that fetches a URL and handles HTTP error codes."""
+"""Sends a request and handles HTTP errors using urllib."""
 import urllib.request
 import urllib.error
 import sys
 
 
-try:
-    with urllib.request.urlopen(sys.argv[1]) as r:
-        print(r.read().decode('utf-8'), end="")
-except urllib.error.HTTPError as e:
-    print("Error code: {}".format(e.code))
+if __name__ == "__main__":
+    try:
+        with urllib.request.urlopen(sys.argv[1]) as response:
+            print(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        print("Error code: {}".format(e.code))
