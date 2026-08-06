@@ -1,3 +1,3 @@
 #!/bin/bash
-# Sends a request to the catch_me endpoint
-curl -sL -X PUT 0.0.0.0:5000/catch_me
+# Sends a request that makes the server respond with "You find me!"
+curl -sL -X PUT -d "user_id=98" 0.0.0.0:5000/catch_me
