@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""Module that fetches a URL and handles HTTP error codes."""
+"""Fetches a URL and handles HTTP error codes."""
 import urllib.request
 import urllib.error
 import sys
+
 
 try:
     with urllib.request.urlopen(sys.argv[1]) as r:
