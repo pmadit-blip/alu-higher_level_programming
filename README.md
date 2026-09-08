@@ -1,4 +1,7 @@
-# ALU Higher Level Programming
+# alu-higher_level_programming
 
-This repository contains Python programming exercises including
-networking, data structures, and object oriented programming.
+## Description
+This repository contains projects for higher level programming using JavaScript.
+
+## Author
+Priscilla Madit
